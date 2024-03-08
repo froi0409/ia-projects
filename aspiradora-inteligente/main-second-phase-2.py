@@ -15,7 +15,4 @@ while True:
     vacumm_cleaner.action = rule
     actionText = vacumm_cleaner.actions[vacumm_cleaner.action]
 
-    if vacumm_cleaner.action == "waiting-for-moving-to-a" or vacumm_cleaner.action == "waiting-for-moving-to-b":
-        time.sleep(3)
-
     print(actionText)
