@@ -1,6 +1,7 @@
-from entities.VacummCleanerABM import VacummCleanerABM
+import time
 
-vacumm_cleaner = VacummCleanerABM()
+from entities.EfficientVacummCleanerABM import EfficientVacummCleanerABM
+vacumm_cleaner = EfficientVacummCleanerABM()
 
 print("¿El cuadrante A está sucio?")
 
@@ -13,5 +14,8 @@ while True:
     rule = vacumm_cleaner.rules[vacumm_cleaner.state]
     vacumm_cleaner.action = rule
     actionText = vacumm_cleaner.actions[vacumm_cleaner.action]
+
+    if vacumm_cleaner.action == "waiting-for-moving-to-a" or vacumm_cleaner.action == "waiting-for-moving-to-b":
+        time.sleep(3)
 
     print(actionText)
