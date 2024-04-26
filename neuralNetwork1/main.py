@@ -1,7 +1,25 @@
-def print_hi(name):
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from utilities.Model import Model
+from utilities.Input import Input
+from colorama import init, Fore
+
+init()
+
+
+def start():
+    print(Fore.YELLOW + "Modelo en entrenamiento..." + Fore.RESET)
+
+    model = Model()
+    model.input_model = [
+        Input(x1=0, x2=1, y=0),
+        Input(x1=1, x2=0, y=0),
+        Input(x1=0, x2=0, y=0),
+        Input(x1=1, x2=1, y=1)
+    ]
+    model.train_model()
+
+    print(Fore.YELLOW + "Modelo Entrenado con éxito." + Fore.RESET)
+    print("\nIngrese sus percepciones")
 
 
 if __name__ == '__main__':
-    print_hi('Fernando')
-
+    start()
