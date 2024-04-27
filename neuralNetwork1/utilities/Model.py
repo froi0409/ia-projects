@@ -37,6 +37,7 @@ class Model:
                 activation = 1 if z >= 0 else 0
                 error_value = element.y - activation
 
+                print("bias: " + str(self.bias))
                 print("z: " + str(z))
                 print("activation: " + str(activation))
                 print("error_value: " + str(error_value))
@@ -68,3 +69,13 @@ class Model:
             if errors is False:
                 break
             iteration = iteration + 1
+
+    def calculate(self, x1, x2):
+        x1 = float(x1)
+        x2 = float(x2)
+
+        value = ((self.w1 * x1) + (self.w2 * x2) + self.bias)
+        if value > 0:
+            return 1
+        else:
+            return 0

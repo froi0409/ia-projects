@@ -19,6 +19,10 @@ def start():
 
     print(Fore.YELLOW + "Modelo Entrenado con éxito." + Fore.RESET)
     print("\nIngrese sus percepciones")
+    x1 = input("x1: ")
+    x2 = input("x2: ")
+
+    print("Resultado: " + str(model.calculate(x1, x2)))
 
 
 if __name__ == '__main__':
