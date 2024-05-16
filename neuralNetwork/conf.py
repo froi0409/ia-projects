@@ -1,3 +1,5 @@
+import sys
+import os
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -6,9 +8,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Neural_Network'
-copyright = '2024, Fernando Ocaña'
-author = 'Fernando Ocaña'
+project = 'NeuralNetwork'
+copyright = '2024, FernandoOcaña'
+author = 'FernandoOcaña'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -16,12 +18,19 @@ author = 'Fernando Ocaña'
 extensions = []
 
 templates_path = ['_templates']
-exclude_patterns = []
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-language = 'es'
+
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
+
+numpydoc_show_class_members = False
+
+sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('./neural'))
+
+

@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class NeuralNetwork:
     """
     Representa una red neuronal con la capacidad de definir la cantidad de entradas, salidas y capas ocultas, así como las funciones de activación para las capas ocultas y la capa de salida.
@@ -53,6 +54,11 @@ class NeuralNetwork:
         return np.where(x >= 0, 1, 0)
 
     def forward_pass(self, X):
+        """
+        Ejecuta el forward pass, el cual no servirá para entrenar y obtener predicciones
+        :param X: Entradas que serviran para predecir o evaluar el entrenamiento (Dependiendo del caso)
+        :return: Salida de la prediccion o valor de entrenamiento
+        """
         # Capa oculta
         if self.activation == self.SIGMOID:
             self.hidden_output = self.sigmoid(np.dot(X, self.weights_input_hidden) + self.bias_hidden)
@@ -68,7 +74,6 @@ class NeuralNetwork:
         return self.output
 
     def backward_pass(self, X, y, learning_rate):
-        # Calcular el error
         error = y - self.output
 
         # Calcular los gradientes para la capa de salida
@@ -92,14 +97,23 @@ class NeuralNetwork:
         self.bias_hidden += np.sum(hidden_gradient, axis=0, keepdims=True) * learning_rate
 
     def train(self, X, y, epochs, learning_rate):
+        """
+        Entrena la red neuronal utilizando el algoritmo de retropropagación.
+
+        Args:
+        - X (numpy array): Matriz de entrada de forma (número de muestras, número de características).
+        - y (numpy array): Matriz de salida de forma (número de muestras, número de salidas).
+        - epochs (int): Número de épocas de entrenamiento.
+        - learning_rate (float): Tasa de aprendizaje del algoritmo.
+
+        Returns:
+        - None
+        """
         for epoch in range(epochs):
-            # Forward pass
             self.forward_pass(X)
 
-            # Backward pass
             self.backward_pass(X, y, learning_rate)
 
-            # Calcular y mostrar el error
             error = np.mean(np.abs(y - self.output))
             if epoch % 1000 == 0:
                 print(f"Epoch {epoch}, Error: {error}")

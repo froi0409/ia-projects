@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module neural.NeuralNetwork</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="neural.html" class="white">neural</a>.NeuralNetwork</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cferru%5Conedrive%5Cdocuments%5Ccunoc%5Cia%5Cia-projects%5Cneuralnetwork%5Cneural%5Cneuralnetwork.py">c:\users\ferru\onedrive\documents\cunoc\ia\ia-projects\neuralnetwork\neural\neuralnetwork.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="numpy.html">numpy</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="neural.NeuralNetwork.html#NeuralNetwork">NeuralNetwork</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="NeuralNetwork">class <strong>NeuralNetwork</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#NeuralNetwork">NeuralNetwork</a>(total_inputs,&nbsp;total_outputs,&nbsp;hidden_layers=None,&nbsp;activation='sigmoid',&nbsp;output_activation='step')<br>
+&nbsp;<br>
+Representa&nbsp;una&nbsp;red&nbsp;neuronal&nbsp;con&nbsp;la&nbsp;capacidad&nbsp;de&nbsp;definir&nbsp;la&nbsp;cantidad&nbsp;de&nbsp;entradas,&nbsp;salidas&nbsp;y&nbsp;capas&nbsp;ocultas,&nbsp;así&nbsp;como&nbsp;las&nbsp;funciones&nbsp;de&nbsp;activación&nbsp;para&nbsp;las&nbsp;capas&nbsp;ocultas&nbsp;y&nbsp;la&nbsp;capa&nbsp;de&nbsp;salida.<br>
+&nbsp;<br>
+Attributes:<br>
+-&nbsp;total_inputs&nbsp;(int):&nbsp;El&nbsp;número&nbsp;de&nbsp;entradas&nbsp;de&nbsp;la&nbsp;red&nbsp;neuronal.<br>
+-&nbsp;total_outputs&nbsp;(int):&nbsp;El&nbsp;número&nbsp;de&nbsp;salidas&nbsp;de&nbsp;la&nbsp;red&nbsp;neuronal.<br>
+-&nbsp;hidden_layers&nbsp;(list&nbsp;of&nbsp;int):&nbsp;Una&nbsp;lista&nbsp;que&nbsp;especifica&nbsp;el&nbsp;número&nbsp;de&nbsp;neuronas&nbsp;en&nbsp;cada&nbsp;capa&nbsp;oculta.&nbsp;La&nbsp;longitud&nbsp;de&nbsp;la&nbsp;lista&nbsp;determina&nbsp;el&nbsp;número&nbsp;de&nbsp;capas&nbsp;ocultas.<br>
+-&nbsp;activation&nbsp;(str):&nbsp;La&nbsp;función&nbsp;de&nbsp;activación&nbsp;utilizada&nbsp;en&nbsp;las&nbsp;capas&nbsp;ocultas.&nbsp;Puede&nbsp;ser&nbsp;'sigmoid'&nbsp;o&nbsp;'tanh'.<br>
+-&nbsp;output_activation&nbsp;(str):&nbsp;La&nbsp;función&nbsp;de&nbsp;activación&nbsp;utilizada&nbsp;en&nbsp;la&nbsp;capa&nbsp;de&nbsp;salida.&nbsp;Puede&nbsp;ser&nbsp;'step'&nbsp;o&nbsp;'identity'.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="NeuralNetwork-__init__"><strong>__init__</strong></a>(self, total_inputs, total_outputs, hidden_layers=None, activation='sigmoid', output_activation='step')</dt><dd><span class="code">Inicializa&nbsp;una&nbsp;nueva&nbsp;red&nbsp;neuronal.<br>
+&nbsp;<br>
+Args:<br>
+-&nbsp;total_inputs&nbsp;(int):&nbsp;El&nbsp;número&nbsp;de&nbsp;entradas&nbsp;de&nbsp;la&nbsp;red&nbsp;neuronal.<br>
+-&nbsp;total_outputs&nbsp;(int):&nbsp;El&nbsp;número&nbsp;de&nbsp;salidas&nbsp;de&nbsp;la&nbsp;red&nbsp;neuronal.<br>
+-&nbsp;hidden_layers&nbsp;(list&nbsp;of&nbsp;int,&nbsp;optional):&nbsp;Una&nbsp;lista&nbsp;que&nbsp;especifica&nbsp;el&nbsp;número&nbsp;de&nbsp;neuronas&nbsp;en&nbsp;cada&nbsp;capa&nbsp;oculta.&nbsp;La&nbsp;longitud&nbsp;de&nbsp;la&nbsp;lista&nbsp;determina&nbsp;el&nbsp;número&nbsp;de&nbsp;capas&nbsp;ocultas.&nbsp;Por&nbsp;defecto,&nbsp;se&nbsp;crea&nbsp;una&nbsp;red&nbsp;sin&nbsp;capas&nbsp;ocultas,&nbsp;es&nbsp;decir,&nbsp;solo&nbsp;una&nbsp;capa&nbsp;de&nbsp;entrada&nbsp;y&nbsp;una&nbsp;capa&nbsp;de&nbsp;salida.<br>
+-&nbsp;activation&nbsp;(str,&nbsp;optional):&nbsp;La&nbsp;función&nbsp;de&nbsp;activación&nbsp;utilizada&nbsp;en&nbsp;las&nbsp;capas&nbsp;ocultas.&nbsp;Puede&nbsp;ser&nbsp;'sigmoid'&nbsp;o&nbsp;'tanh'.&nbsp;Por&nbsp;defecto,&nbsp;se&nbsp;utiliza&nbsp;'sigmoid'.<br>
+-&nbsp;output_activation&nbsp;(str,&nbsp;optional):&nbsp;La&nbsp;función&nbsp;de&nbsp;activación&nbsp;utilizada&nbsp;en&nbsp;la&nbsp;capa&nbsp;de&nbsp;salida.&nbsp;Puede&nbsp;ser&nbsp;'step'&nbsp;o&nbsp;'identity'.&nbsp;Por&nbsp;defecto,&nbsp;se&nbsp;utiliza&nbsp;'step'.</span></dd></dl>
+
+<dl><dt><a name="NeuralNetwork-backward_pass"><strong>backward_pass</strong></a>(self, X, y, learning_rate)</dt></dl>
+
+<dl><dt><a name="NeuralNetwork-forward_pass"><strong>forward_pass</strong></a>(self, X)</dt><dd><span class="code">Ejecuta&nbsp;el&nbsp;forward&nbsp;pass,&nbsp;el&nbsp;cual&nbsp;no&nbsp;servirá&nbsp;para&nbsp;entrenar&nbsp;y&nbsp;obtener&nbsp;predicciones<br>
+:param&nbsp;X:&nbsp;Entradas&nbsp;que&nbsp;serviran&nbsp;para&nbsp;predecir&nbsp;o&nbsp;evaluar&nbsp;el&nbsp;entrenamiento&nbsp;(Dependiendo&nbsp;del&nbsp;caso)<br>
+:return:&nbsp;Salida&nbsp;de&nbsp;la&nbsp;prediccion&nbsp;o&nbsp;valor&nbsp;de&nbsp;entrenamiento</span></dd></dl>
+
+<dl><dt><a name="NeuralNetwork-sigmoid"><strong>sigmoid</strong></a>(self, x)</dt></dl>
+
+<dl><dt><a name="NeuralNetwork-sigmoid_derivative"><strong>sigmoid_derivative</strong></a>(self, x)</dt></dl>
+
+<dl><dt><a name="NeuralNetwork-step"><strong>step</strong></a>(self, x)</dt></dl>
+
+<dl><dt><a name="NeuralNetwork-train"><strong>train</strong></a>(self, X, y, epochs, learning_rate)</dt><dd><span class="code">Entrena&nbsp;la&nbsp;red&nbsp;neuronal&nbsp;utilizando&nbsp;el&nbsp;algoritmo&nbsp;de&nbsp;retropropagación.<br>
+&nbsp;<br>
+Args:<br>
+-&nbsp;X&nbsp;(numpy&nbsp;array):&nbsp;Matriz&nbsp;de&nbsp;entrada&nbsp;de&nbsp;forma&nbsp;(número&nbsp;de&nbsp;muestras,&nbsp;número&nbsp;de&nbsp;características).<br>
+-&nbsp;y&nbsp;(numpy&nbsp;array):&nbsp;Matriz&nbsp;de&nbsp;salida&nbsp;de&nbsp;forma&nbsp;(número&nbsp;de&nbsp;muestras,&nbsp;número&nbsp;de&nbsp;salidas).<br>
+-&nbsp;epochs&nbsp;(int):&nbsp;Número&nbsp;de&nbsp;épocas&nbsp;de&nbsp;entrenamiento.<br>
+-&nbsp;learning_rate&nbsp;(float):&nbsp;Tasa&nbsp;de&nbsp;aprendizaje&nbsp;del&nbsp;algoritmo.<br>
+&nbsp;<br>
+Returns:<br>
+-&nbsp;None</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>IDENTITY</strong> = 'identity'</dl>
+
+<dl><dt><strong>SIGMOID</strong> = 'sigmoid'</dl>
+
+<dl><dt><strong>STEP</strong> = 'step'</dl>
+
+<dl><dt><strong>TANH</strong> = 'tanh'</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>
