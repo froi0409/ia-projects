@@ -9,12 +9,12 @@ def start():
     print(Fore.YELLOW + "Modelo en entrenamiento..." + Fore.RESET)
 
     model = Model()
-    model.input_model = [
-        Input(x1=0, x2=1, y=0),
-        Input(x1=1, x2=0, y=0),
-        Input(x1=0, x2=0, y=0),
-        Input(x1=1, x2=1, y=1)
-    ]
+    # model.input_model = [
+    #     Input(x1=0, x2=1, y=0),
+    #     Input(x1=1, x2=0, y=0),
+    #     Input(x1=0, x2=0, y=0),
+    #     Input(x1=1, x2=1, y=1)
+    # ]
     model.train_model()
 
     print(Fore.YELLOW + "Modelo Entrenado con éxito." + Fore.RESET)
